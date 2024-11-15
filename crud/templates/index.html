@@ -7,4 +7,22 @@
 
 {% block content %}
 <h1> Menu Principal</h1>
+<table class="table table-dark">
+    <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Detalles</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pokemon in pokemones%}
+        <tr>
+          <th scope="row">{{ pokemon.id }}</th>
+          <td>{{ pokemon.nombre }}</td>
+          <td><a class="btn btn-success" href="{% url 'detallePokemon' pokemon.id %}">Detalles</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
 {% endblock content%}

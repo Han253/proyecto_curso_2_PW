@@ -6,5 +6,26 @@
 {% endblock extrahead%}
 
 {% block content %}
+<a class="btn btn-warning" href={% url 'index' %}>Regresar</a>
 <h1> Detalle</h1>
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Altura</th>
+          <th scope="col">Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ pokemon.id }}</th>
+          <td>{{ pokemon.nombre }}</td>
+          <td>{{ pokemon.peso }}</td>
+          <td>{{ pokemon.altura }}</td>
+          <td><img src="{{ pokemon.imagen.url }}"></td>
+        </tr>
+      </tbody>
+</table>
 {% endblock content%}
